@@ -18,7 +18,7 @@ name: Sub-Mux
 provides:
   Sub::Mux:
     file: lib/Sub/Mux.pm
-    version: 0.01
+    version: 0.02
 requires:
   Carp: 0
   perl: 5.008005
@@ -26,6 +26,6 @@ resources:
   bugtracker: http://github.com/bayashi/Sub-Mux/issues
   license: http://dev.perl.org/licenses/
   repository: http://github.com/bayashi/Sub-Mux
-version: 0.01
+version: 0.02
 x_test_requires:
   Test::More: 0.88

@@ -36,7 +36,7 @@
    "provides" : {
       "Sub::Mux" : {
          "file" : "lib/Sub/Mux.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -51,7 +51,7 @@
          "url" : "http://github.com/bayashi/Sub-Mux"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_test_requires" : {
       "Test::More" : "0.88"
    }

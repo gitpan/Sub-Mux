@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp qw/croak/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my $class = shift;
@@ -63,7 +63,7 @@ sub unshift_subs {
 sub _unshift {
     my ($self, $list, $append) = @_;
 
-    for my $arg (@{$append}) {
+    for my $arg (reverse @{$append}) {
         if (ref $arg eq 'CODE') {
             unshift @{$list}, $arg;
         }
@@ -130,30 +130,34 @@ Sub::Mux is the module for multiplex subs executer
 
 =head1 METHODS
 
-=head2 new
+=head2 new(@args)
 
 constructor
 
+C<@args> contains coderef list.
+
 =head2 subs
 
-to get subs
+to get subs list
 
 =head2 execute_first, execute
 
-execute subs and return the first result.
+executing subs and return the first result.
 
 =head2 execute_all
 
-execute all subs and return all result as array ref.
+execute all subs and return all results as array ref.
 
-=head2 execute_list
+=head2 execute_list(@args)
 
 execute specific subs and return the result as array ref.
 
-=head2 push_subs, pop_subs, shift_subs, unshift_subs
+C<@args> is the list of index.
+
+=head2 push_subs(@subs), pop_subs, unshift_subs(@subs), shift_subs
 
 To operate the element of subs.
-These are similar to core functions: C<push>, C<pop>, C<shift>, C<unshift>
+These are similar to core functions: C<push>, C<pop>, C<unshift>, C<shift>
 
 
 =head1 REPOSITORY
